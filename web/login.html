@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyBasket – Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-body">
+  <center>
+    <div class="login-container">
+      <h1>Login Page</h1>
+
+      <!-- Java fills this with error/success message -->
+      {{MSG}}
+
+      <!-- Form POSTs to /login → Java (UserHandler.handleLogin) checks MySQL -->
+      <form method="POST" action="/login">
+        <table>
+          <tr>
+            <td><label for="email">User Name or E-mail</label></td>
+            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+          </tr>
+          <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td>
+          </tr>
+        </table>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <div class="register-link">
+      New User? <a href="/register.html">Register here</a>
+    </div>
+  </center>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart – HappyBasket</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="/index.html">HappyBasket🌸</a>
+
+    <nav class="nav-right">
+      {{NAVBAR}}
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </header>
+
+  <h1 style="
+      text-align:center;
+      padding:26px 0 6px;
+      font-family:'Great Vibes', cursive;
+      color:#8B0000;
+      font-size:2.6rem;">
+    &#128722; Your Cart
+  </h1>
+
+  <!-- Java fills this message (outofstock / emptycart / dberror) -->
+  {{CART_MSG}}
+
+  <!-- Empty cart message — Java sets display:block or none -->
+  <div id="cart-empty" style="
+      display:{{CART_EMPTY}};
+      text-align:center;
+      padding:40px;
+      font-family:'Poppins', sans-serif;
+      color:#a05070;">
+    <p style="font-size:1.2rem;">Your cart is empty &#127800;</p>
+
+    <a href="/index.html#products"
+       class="btn-checkout"
+       style="display:inline-block; margin-top:10px;">
+      Continue Shopping
+    </a>
+  </div>
+
+  <!-- Cart table — Java fills rows, hides if empty -->
+  <table id="cart-table" style="display:{{CART_TABLE_DISPLAY}};">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Java builds these rows from MySQL cart table -->
+      {{CART_ROWS}}
+    </tbody>
+  </table>
+
+  <!-- Grand Total — Java calculates from MySQL -->
+  <div class="cart-total" style="display:{{CART_TABLE_DISPLAY}};">
+    Grand Total: <span>{{GRAND_TOTAL}}</span>
+  </div>
+
+  <!-- Checkout button — POSTs to /cart/checkout in Java -->
+  <div class="cart-actions" style="display:{{CART_ACTIONS_DISPLAY}};">
+    <form method="POST" action="/cart/checkout">
+      <button type="submit" class="btn btn-checkout">Proceed to Checkout</button>
+    </form>
+  </div>
+
+  <script src="/cart.js"></script>
+</body>
+</html>
+``

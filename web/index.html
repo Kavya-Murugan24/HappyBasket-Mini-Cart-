@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyBasket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- NAVBAR — Java fills this in based on login session -->
+<header class="navbar">
+  <a class="logo" href="/index.html">HappyBasket🌸</a>
+  <nav class="nav-right">
+    {{NAVBAR}}
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>Welcome to <strong>HappyBasket🌸</strong>, where every bouquet tells a story.
+     We are passionate about bringing nature's beauty into your life through carefully crafted floral arrangements.</p>
+  <p>From romantic roses to cheerful sunflowers, exotic orchids, and seasonal blooms,
+     each flower is handpicked to ensure freshness and quality.
+     Whether it's a special occasion or a spontaneous gesture of love, we create bouquets that make every moment memorable.</p>
+  <p>Our mission is simple: to spread happiness one flower at a time.
+     At HappyBasket, customer satisfaction is our top priority.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h1>Welcome to HappyBasket</h1>
+  <p id="startpara">"Flowers speak the language of love – send a bouquet today and make someone smile!"</p>
+
+  <div class="products-container">
+
+    <!-- Each "Add to Cart" is a small HTML form → POSTs to /cart/add in Java -->
+    <!-- If not logged in, Java redirects to login.html — NO JS needed for this logic -->
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="/images/red-roses-bouquet-table-generative-ai_379823-9659.avif" alt="Red Roses"
+           onerror="this.src='https://placehold.co/300x220/fce8ed/c94466?text=Red+Roses'">
+      <h2 class="flowername">Red Roses</h2>
+      <p class="price">&#8377;500</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="1">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/sunflower-bundle.avif" alt="Sunflower Bundle"
+           onerror="this.src='https://placehold.co/300x220/fffde7/f57f17?text=Sunflowers'">
+      <h2 class="flowername">Sunflower Bundle</h2>
+      <p class="price">&#8377;350</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="2">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/lily-mix.jpg" alt="Lily Mix"
+           onerror="this.src='https://placehold.co/300x220/f3e5f5/7b1fa2?text=Lily+Mix'">
+      <h2 class="flowername">Lily Mix</h2>
+      <p class="price">&#8377;450</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="3">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/tulip.webp" alt="Tulip Surprise"
+           onerror="this.src='https://placehold.co/300x220/fce4ec/c62828?text=Tulips'">
+      <h2 class="flowername">Tulip Surprise</h2>
+      <p class="price">&#8377;400</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="4">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="/images/orchid-ele-new.jpg" alt="Orchid Elegance"
+           onerror="this.src='https://placehold.co/300x220/ede7f6/4527a0?text=Orchid'">
+      <h2 class="flowername">Orchid Elegance</h2>
+      <p class="price">&#8377;600</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="5">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <span class="badge sale">Sold</span>
+      <img src="/images/mixed-flower-bouquet.avif" alt="Mixed Basket"
+           onerror="this.src='https://placehold.co/300x220/e8f5e9/2e7d32?text=Mixed+Basket'">
+      <h2 class="flowername">Mixed Basket</h2>
+      <p class="price">&#8377;550</p>
+      <button class="cartbutton" disabled>Sold Out</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section id="highlights">
+  <h2>Featured Collection</h2>
+  <div class="products-container">
+
+    <div class="product-card">
+      <img src="/images/peony-delight.webp" alt="Peony Delight"
+           onerror="this.src='https://placehold.co/300x220/fce8ed/c94466?text=Peony'">
+      <h2 class="flowername">Peony Delight</h2>
+      <p class="price">&#8377;500</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="7">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/gerbera-new.webp" alt="Gerbera Mix"
+           onerror="this.src='https://placehold.co/300x220/fff3e0/e65100?text=Gerbera'">
+      <h2 class="flowername">Gerbera Mix</h2>
+      <p class="price">&#8377;420</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="8">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/orchid-new.jpg" alt="Orchid Bouquet"
+           onerror="this.src='https://placehold.co/300x220/ede7f6/4527a0?text=Orchid'">
+      <h2 class="flowername">Orchid bouquet</h2>
+      <p class="price">&#8377;600</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="9">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="/images/lavender-wedding-bouquet.avif" alt="Lavender Charm"
+           onerror="this.src='https://placehold.co/300x220/ede7f6/4527a0?text=Lavender'">
+      <h2 class="flowername">Lavender Charm</h2>
+      <p class="price">&#8377;450</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="10">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/rose-and-lily-new.jpg" alt="Rose and Lily Mix"
+           onerror="this.src='https://placehold.co/300x220/fce8ed/c94466?text=Rose+Lily'">
+      <h2 class="flowername">Rose and Lily Mix</h2>
+      <p class="price">&#8377;550</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="11">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/daisy.jpg" alt="Daisy Bouquet"
+           onerror="this.src='https://placehold.co/300x220/fffde7/f57f17?text=Daisy'">
+      <h2 class="flowername">Daisy bouquet</h2>
+      <p class="price">&#8377;500</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="12">
+        <input type="hidden" name="qty"       value="1">
+        <button type="submit" class="cartbutton">Add to Cart</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-help">
+    <div class="contact-card">&#128231; Email: happybasket@example.com</div>
+    <div class="contact-card">&#128222; Phone: +91 1234567890</div>
+    <div class="contact-card">&#128172; Help Center</div>
+  </div>
+</div>
+
+<!-- Only JS used here: mobile nav toggle + cart badge fetch -->
+<script src="/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyBasket – Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-body">
+  <center>
+    <div class="login-container">
+      <h1>New Registration</h1>
+
+      {{MSG}}
+
+      <form method="POST" action="/register">
+        <table>
+          <tr>
+            <td><label for="fullname">Full Name</label></td>
+            <td><input type="text" id="fullname" name="fullname" placeholder="Enter your name" required></td>
+          </tr>
+          <tr>
+            <td><label for="email">E-mail</label></td>
+            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+          </tr>
+          <tr>
+            <td><label for="phone">Phone</label></td>
+            <td><input type="tel" id="phone" name="phone" placeholder="Enter your phone"></td>
+          </tr>
+          <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" id="password" name="password" placeholder="Enter your password" required></td>
+          </tr>
+          <tr>
+            <td><label for="confirm">Confirm Password</label></td>
+            <td><input type="password" id="confirm" name="confirm" placeholder="Confirm your password" required></td>
+          </tr>
+        </table>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <div class="register-link">
+      Already our customer? <a href="/login.html">Login here</a>
+    </div>
+  </center>
+</body>
+</html>
